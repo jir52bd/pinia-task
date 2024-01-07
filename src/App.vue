@@ -7,17 +7,16 @@
       <h1>{{ taskStore.name }}</h1>
     </header>
 
+     <!-- new task form -->
+     <div class="new-task-form">
+      <TaskForm />
+    </div>
+    
     <!--filter-->
     <nav class="filter">
       <button @click="filter = 'all'">All Tasks</button>
       <button @click="filter = 'favs'">Favs Tasks</button>
     </nav>
-
-     <!-- new task form -->
-     <div class="new-task-form">
-      <TaskForm />
-    </div>
-
 
     <!-- Task list-->
     <div class="task-list" v-if="filter === 'all'">
