@@ -11,12 +11,15 @@
      <div class="new-task-form">
       <TaskForm />
     </div>
-    
+
     <!--filter-->
     <nav class="filter">
       <button @click="filter = 'all'">All Tasks</button>
       <button @click="filter = 'favs'">Favs Tasks</button>
     </nav>
+
+    <!-- loading -->
+    <div class="loading" v-if="taskStore.loading">Loading tasks...</div>
 
     <!-- Task list-->
     <div class="task-list" v-if="filter === 'all'">
