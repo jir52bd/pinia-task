@@ -13,6 +13,12 @@
       <button @click="filter = 'favs'">Favs Tasks</button>
     </nav>
 
+     <!-- new task form -->
+     <div class="new-task-form">
+      <TaskForm />
+    </div>
+
+
     <!-- Task list-->
     <div class="task-list" v-if="filter === 'all'">
       <p>You have assigned {{ taskStore.totalCount }} tasks.</p>
@@ -34,11 +40,13 @@
 <script>
 import { ref } from 'vue'
 import TaskDetails from './components/TaskDetails.vue';
+import TaskForm from './components/TaskForm.vue';
 import {useTaskStore} from './stores/TaskStore';
 
   export default {
     components:{
-      TaskDetails
+      TaskDetails,
+      TaskForm
     },
     setup(){
 
